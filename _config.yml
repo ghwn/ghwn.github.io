@@ -29,7 +29,7 @@ navigation:
   - name: Tags
     url: /tags
   - name: Theme
-    url: https://github.com/ghwn/ghwn.github.io
+    url: https://github.com/aweekj/kiko-now
 
 # Pagination
 paginate: 5

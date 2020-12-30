@@ -11,7 +11,3 @@ permalink: /about/
 - Python
 - Deep Learning
 - Django
-
-### Contact me
-
-[ghwn5936@gmail.com](mailto:ghwn5936@gmail.com)
