@@ -181,3 +181,9 @@ $$
 $$
 
 여기서 $$\mathbf{p}_u^G$$와 $$\mathbf{p}_u^M$$는 GMF와 MLP 파트에 대한 사용자 임베딩을 의미한다. 이와 비슷하게 $$\mathbf{q}_i^G$$와 $$\mathbf{q}_i^M$$는 GMF와 MLP 파트에 대한 아이템 임베딩을 의미한다. 앞서 논의한대로 MLP 레이어의 activation function은 ReLU이다. 이 모델은 사용자-아이템 잠재 구조를 모델링하기 위해 MF의 선형성과 DNN의 비선형성을 결합한다. 별칭은 *Neural Matrix Factorization (NeuMF)* 이다.
+
+---
+
+## 출처
+
+- [https://arxiv.org/abs/1708.05031](https://arxiv.org/abs/1708.05031)
