@@ -47,7 +47,7 @@ $$
 
 여기서 $$K$$는 잠재 공간의 차원을 의미한다. 볼 수 있듯이, MF는 잠재 공간의 각 차원이 서로 독립적이고 그들이 동일한 가중치로 선형 결합한다고 가정하면서 사용자와 아이템의 잠재 요소 간 two-way 인터랙션을 모델링한다.
 
-![figure-1](/images/ncf-fig1.PNG)
+![figure-1](/assets/images/neural-collaborative-filtering-figure1.png)
 
 위 예제는 저차원의 잠재공간에 있는 사용자와 아이템 간의 복잡한 인터랙션을 계산하기 위해서 inner product 라는 심플하고 고정된 연산을 사용하면 발생할 수 있는 MF의 한계를 보여준다. 이 문제를 해결하기 위한 한 가지 방법은 잠재  요소 $$K$$의 숫자의 늘리는 것이다. 하지만 이는 모델의 일반화에 불리하게 작용될 수 있으며 (예: 오버피팅), 특히 sparse settings 경우에는 더욱 그렇다. 우리는 데이터로부터 DNN을 사용한 interaction function 학습을 진행함으로써 이 문제를 해결한다.
 
@@ -55,7 +55,7 @@ $$
 
 ## General Framework
 
-![neural-collaborative-filtering-framework](/images/ncf-fig2.PNG)
+![neural-collaborative-filtering-framework](/assets/images/neural-collaborative-filtering-figure2.png)
 
 위 그림처럼 사용자-아이템 인터랙션 $$y_{ui}$$를 모델링하기 위해 멀티 레이어를 적용시킨다. 한 레이어 출력은 다음 레이어의 입력이 된다. 최하단 입력 레이어는 두 개의 특징 벡터 $$\mathbf{v}_u^U$$와 $$\mathbf{v}_i^I$$로 구성되며, 각각 사용자 $$u$$와 아이템 $$i$$를 나타낸다. 이들은 context-aware, content-based, neighbor-based 와 같이 더 넓은 범위의 모델링을 지원할 수 있도록 커스텀될 수 있다. 여기서는 순수 collaborative filtering setting에 집중할 것이기 때문에 사용자와 아이템만을 가지고 one-hot 인코딩을 통해 binarized sparse vector로 변환한 벡터들을 입력 특징으로서 사용하도록 한다.
 
@@ -162,7 +162,7 @@ $$
 그러나 GMF와 MLP의 임베딩을 공유하는 것은 합쳐진 모델의 성능을 제한시킬지도 모른다. 예를 들면 GMP와 MLP는 반드시 같은 사이즈의 임베딩을 사용해야만 한다는 암묵적인 규칙이 생긴다. 그러면 두 개의 모델에 대해서 서로 다른 사이즈의 최적값을 갖는 데이터셋에 대해서는 최적화된 모델을 얻는데 실패하게 된다.
 합쳐진 모델에 조금 더 유연성을 제공하기 위해 우리는 GMF와 MLP가 독립된 임베딩을 학습하도록 하고 마지막 출력 레이어에서 합쳐주도록 한다.
 
-![neural-matrix-factorization-model](/images/ncf-fig3.PNG)
+![neural-matrix-factorization-model](/assets/images/neural-collaborative-filtering-figure3.png)
 
 위 그림이 우리가 제안하는 것을 표현한 것이며 공식은 다음과 같다.
 
