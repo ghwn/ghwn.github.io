@@ -184,6 +184,12 @@ $$
 
 ---
 
+
+## 구현
+
+- [https://github.com/ghwn/neural-collaborative-filtering](https://github.com/ghwn/neural-collaborative-filtering)
+
+
 ## 출처
 
 - [https://arxiv.org/abs/1708.05031](https://arxiv.org/abs/1708.05031)
