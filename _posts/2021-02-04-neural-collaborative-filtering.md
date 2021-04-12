@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Neural Collaborative Filtering 논문 리뷰
-tags: [recommender system, deep learning, paper]
+tags: [deep learning]
 comments: true
 ---
 

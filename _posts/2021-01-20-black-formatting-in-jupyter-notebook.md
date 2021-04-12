@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "주피터 노트북에서 black 포맷팅 적용하기"
-tags: [python, jupyter, black, formatting]
+tags: [python]
 comments: true
 ---
 
