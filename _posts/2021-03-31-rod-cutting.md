@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "동적 프로그래밍 예제: 막대 자르기"
-tags: [data structure and algorithm]
+tags: [algorithm]
 comments: true
 ---
 
@@ -9,7 +9,7 @@ comments: true
 
 $$i=1, 2, ...$$에 대해 강철회사는 길이 $$i$$인치의 막대에 대해서 달러로 가격 $$p_i$$를 청구한다고 가정한다. 막대 길이는 언제나 단위가 인치다. 그림 15.1은 가격 표의 예다.
 
-![/assets/images/dynamic_programming/rod_cutting/2021-04-06__2.11.02.png](/assets/images/dynamic_programming/rod_cutting/2021-04-06__2.11.02.png)
+<img src="/assets/images/dynamic_programming/rod_cutting/2021-04-06__2.11.02.png" height="180px">
 
 **막대-자르기 문제**는 다음과 같다.
 
@@ -19,7 +19,7 @@ $$i=1, 2, ...$$에 대해 강철회사는 길이 $$i$$인치의 막대에 대해
 
 $$n=4$$일 때를 고려해보자. 그림 15.2는 자르지 않는 것을 비롯해 길이가 4인 막대를 자르는 방법을 모두 보여준다. 4인치 막대를 2인치 두 개로 나누면 최적의 수익으로 $$p_2 + p_2 = 5 + 5 = 10$$이 발생함을 알 수 있다.
 
-![/assets/images/dynamic_programming/rod_cutting/2021-04-06__2.26.06.png](/assets/images/dynamic_programming/rod_cutting/2021-04-06__2.26.06.png)
+<img src="/assets/images/dynamic_programming/rod_cutting/2021-04-06__2.26.06.png" width="700px">
 
 길이가 $$n$$인 막대는 $$2^{n-1}$$개의 다른 방법으로 나눌 수 있는데, 맨 왼쪽 끝부터 $$i=1, 2, ..., n-1$$에 대한 모든 $$i$$인치마다 자르거나 자르지 않거나 하는 독립적인 선택을 할 수 있기 때문이다. 보통 덧셈 개념을 이용해 조각의 분해를 나타내, $$7=2+2+3$$은 길이가 7인 막대를 길이가 2인 두 조각과 길이가 3인 한 조각으로 나누었음을 나타낸다. 만약 최적해가 막대를 $$1 \le k \le n$$에 대해 $$k$$개의 조각으로 나누면, 막대를 조각 길이 $$i_1, i_2, ..., i_k$$로 나누는 최적의 분해는
 
@@ -31,7 +31,7 @@ $$r_n = p_{i_1} + p_{i_2} + ... + p_{i_k}$$
 
 예제에서는 $$i=1, 2, ..., 10$$에 대한 최적의 수익 $$r_i$$를 해당되는 최적의 분해를 이용한 면밀한 조사를 통해 결정할 수 있다.
 
-![/assets/images/dynamic_programming/rod_cutting/2021-04-06__2.41.10.png](/assets/images/dynamic_programming/rod_cutting/2021-04-06__2.41.10.png)
+<img src="/assets/images/dynamic_programming/rod_cutting/2021-04-06__2.41.10.png" height="250px">
 
 좀 더 일반적으로 말하면, $$n \ge 1$$에 대한 $$r_n$$ 값을 더 작은 막대로부터의 최대 수익을 이용해 나타낼 수 있다.
 
@@ -51,7 +51,7 @@ $$r_n = \max_{1 \le i \le n}(p_i + r_{n-i}) \qquad \text{(15.2)}$$
 
 다음 프로시저는 식 (15.2)가 함축하고 있는 계산을 단순한 하향식 재귀 방법으로 구현한 것이다.
 
-![/assets/images/dynamic_programming/rod_cutting/2021-04-06__3.27.29.png](/assets/images/dynamic_programming/rod_cutting/2021-04-06__3.27.29.png)
+<img src="/assets/images/dynamic_programming/rod_cutting/2021-04-06__3.27.29.png" height="190px">
 
 - Python 구현
 
@@ -71,7 +71,7 @@ $$r_n = \max_{1 \le i \le n}(p_i + r_{n-i}) \qquad \text{(15.2)}$$
 
 CUT-ROD가 매우 비효율적인 이유는 무엇일까? 문제는 CUT-ROD가 같은 인자를 가지고 자기 자신을 계속 재귀적으로 호출하는 데 있다. 이것은 같은 부분 문제를 반복해서 풀려고 한다. 그림 15.3은 $$n=4$$일 때 어떤 일이 발생하는지를 보여준다.
 
-![/assets/images/dynamic_programming/rod_cutting/2021-04-06__4.06.19.png](/assets/images/dynamic_programming/rod_cutting/2021-04-06__4.06.19.png)
+<img src="/assets/images/dynamic_programming/rod_cutting/2021-04-06__4.06.19.png" width="700px">
 
 CUT-ROD(p, n)은 $$i=1, 2, ..., n$$에 대해 CUT-ROD(p, n - i)를 호출한다. 같은 방식으로, CUT-ROD(p, n)은 각 $$j=0, 1, ..., n-1$$에 대해 CUT-ROD(p, j)를 호출한다. 이 과정이 재귀적으로 전개되면 총 일의 양은 $$n$$에 대해 매우 폭발적으로 증가하는 함수로 표시된다. $$n$$이 하나씩 추가될 때마다 지금까지 반복한 작업을 또 수행하는 매우 비효율적인 방법이며, 수행시간 $$T(n)=2^n$$이다.
 

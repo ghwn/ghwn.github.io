@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "동적 프로그래밍 예제: 행렬-체인 곱셈"
-tags: [data structure and algorithm]
+tags: [algorithm]
 comments: true
 ---
 
