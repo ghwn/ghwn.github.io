@@ -4,10 +4,9 @@ title: About
 permalink: /about/
 ---
 
-이곳을 방문해주셔서 감사합니다.
+안녕하세요. 이 블로그에 방문해주셔서 감사합니다 😀
 
 ### 관심 주제
 
-- Python
-- Deep Learning
-- Django
+- ~~Machine Learning / Deep Learning~~
+- Backend Web Development

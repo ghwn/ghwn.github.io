@@ -6,7 +6,7 @@
 name: ghwn's blog
 
 # Short bio or description (displayed in the header)
-description: 
+description: Choose and focus!
 
 #
 # Flags below are optional
@@ -20,7 +20,7 @@ avatar: https://avatars3.githubusercontent.com/u/29449327?s=460&v=4
 # and URL Link(e.g. 'Theme' tab below) tabs. If you don't need one, just delete
 # it from the list(Delete '- name: ' and 'url: ', too!)
 navigation:
-  - name: Blog
+  - name: Posts
     url: /
   - name: About
     url: /about
