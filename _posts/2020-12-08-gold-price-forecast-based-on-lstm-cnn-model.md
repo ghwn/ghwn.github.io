@@ -44,7 +44,7 @@ comments: true
 
 ## Our Approach
 
-![Methodology](/assets/images/gold-price-forecast/figures/methodology.png)
+![Methodology](/assets/images/2020-12-08-gold-price-forecast-based-on-lstm-cnn-model/figures/methodology.png)
 
 - 위 그림처럼 방법론은 네 가지 부분으로 이루어져 있다.
     - Data Preprocessing
@@ -54,7 +54,7 @@ comments: true
 
 ### 1. Data Preprocessing
 
-![Data Preprocessing Figure 1](/assets/images/gold-price-forecast/figures/data-preprocessing-figure1.png)
+![Data Preprocessing Figure 1](/assets/images/2020-12-08-gold-price-forecast-based-on-lstm-cnn-model/figures/data-preprocessing-figure1.png)
 
 - 데이터를 모델에 입력하기 전에 우리는 standard scale method (*denoted as S(x)*)를 사용해야 한다.
 - 입력의 길이를 α만큼 설정해야 한다.
@@ -63,7 +63,7 @@ comments: true
 
 ### 2. LSTM Component
 
-![LSTM Detailed Model](/assets/images/gold-price-forecast/figures/lstm-detailed-model.png)
+![LSTM Detailed Model](/assets/images/2020-12-08-gold-price-forecast-based-on-lstm-cnn-model/figures/lstm-detailed-model.png)
 
 - LSTM 레이어는 β 길이만큼 생성되며, 각 레이어는 Input 레이어, LSTM 유닛, Output 레이어 세 단계로 구성되어 있다.
 - LSTM 유닛은 Input 게이트, Output 게이트, Forget 게이트 총 세 개의 게이트로 구성되어 있다.
@@ -108,7 +108,7 @@ comments: true
 
 ### Results
 
-![Performance](/assets/images/gold-price-forecast/figures/performance.png)
+![Performance](/assets/images/2020-12-08-gold-price-forecast-based-on-lstm-cnn-model/figures/performance.png)
 
 - Training ratio = 80%일 때를 보면 attention 메커니즘이 중요한 역할을 하고 있음을 알 수 있다.
 - 결과를 보면 CNN-LSTM 모델이 LSTM-CNN 모델보다 성능이 낮은 것을 볼 수 있다.

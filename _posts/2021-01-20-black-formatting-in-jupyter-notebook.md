@@ -22,7 +22,7 @@ $ pip install blackcellmagic
 1. `%load_ext blackcellmagic`을 실행해 모듈을 불러온다.
 2. `%%black` 명령어를 통해 포맷팅을 적용한다.
 
-![how-to-use-blackcellmagic](/assets/images/how-to-use-blackcellmagic.gif)
+![how-to-use-blackcellmagic](/assets/images/2021-01-20-black-formatting-in-jupyter-notebook/how-to-use-blackcellmagic.gif)
 
 ```python
 # black 기본 라인 길이 88로 포맷팅을 적용하려면
