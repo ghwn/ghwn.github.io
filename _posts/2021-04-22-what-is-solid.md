@@ -21,24 +21,33 @@ comments: true
 
 - 소프트웨어 요소는 **확장에는 열려**있으나 **변경에는 닫혀** 있어야 한다.
 - 역할과 구현의 분리를 이끌어내는 다형성을 활용한다.
-- 아래 코드와 같은 맥락인데 인터페이스를 구현하는 클래스를 **얼마든지 만들어 확장**할 수 있고 그에 따른 **코드의 변경이 일어나지 않는다**는 뜻이다. 그런 면에서 사실 아래 코드는 엄밀히 말하면 새로 확장된 구현 클래스를 선택하기 위해 코드를 변경했기 때문에 개방-폐쇄 원칙을 지켰다고 말할 수는 없다. 변경에 닫혀있다고 말할 수 있으려면 `Service` 클래스에서 코드의 변경이 일어나면 안 된다. 이 원칙을 제대로 지키려면 객체를 생성하고 연관관계를 맺어주는 별도의 조립, 설정자가 필요하다.
+- OCP를 지키는 예시:
     ```java
     public class Service {
-        // private Repository repository = new MemoryRepository();
-        private Repository repository = new JdbcRepository(); // 새로운 구현 클래스로 변경
+        private Repository repository;
+
+        // 다른 리포지토리를 새로 만들어 사용한다고 해도 이 코드에는 변경이 일어나지 않는다.
+        // 여기서는 어떤 리포지토리를 사용할지에 대한 결정권을 외부에 맡김으로써(dependency injection)
+        // OCP를 지키고 있다.
+        public Service(Repository repository) {
+            this.repository = repository;
+        }
     }
 
+    // 얼마든지 새로운 구현 클래스를 만들어 확장할 수 있다.
     public class MemoryRepository implements Repository {
-        // 인터페이스 구현
         @Override
         ...
     }
-    // 인터페이스를 구현하는 클래스를 얼마든지 만들어 확장할 수 있다.
-    public class JdbcRepository implements Repository {
-        // 인터페이스 구현
+    public class OtherRepository1 implements Repository {
         @Override
         ...
     }
+    public class OtherRepository2 implements Repository {
+        @Override
+        ...
+    }
+    ...
     ```
 
 
@@ -80,3 +89,6 @@ comments: true
         }
     }
     ```
+    밑의 코드로 수정하면서 얻는 장점
+    - 특정 repository에 대한 의존성을 없앨 수 있음.
+    - 따라서 관심 대상이 줄어 들어 자신의 역할에 더 충실할 수 있음.
